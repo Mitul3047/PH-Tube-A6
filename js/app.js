@@ -45,11 +45,11 @@ const handleCategoryButton = async (categoryId) => {
         console.log(categoryType)
         const div = document.createElement('div')
         div.innerHTML = `
-        <div class="card  bg-base-100 shadow-xl">
-                <figure><img src="${categoryType?.thumbnail}" alt="thumblin" /></figure>
+        <div class="card h-[400px] bg-base-100 shadow-xl mb-10">
+                <figure><img src="${categoryType?.thumbnail}" alt="thumblin" class="h-[200px] w-full" /></figure>
                 <div class="card-body">
-                  <div class=" flex justify-between items-center">
-                    <img src="${categoryType?.authors[0].profile_picture}" alt="profile picture" class="w-14 rounded-full">
+                  <div class=" flex gap-3 items-center">
+                    <img src="${categoryType?.authors[0].profile_picture}" alt="profile picture" class="w-10 h-10 rounded-full">
                     <h3>${categoryType?.title}</h3>
                   </div>
                   <div class="flex justify-between items-center">
