@@ -19,7 +19,7 @@ const handelcatagory = async () => {
     data.data?.forEach((category) => {
         const div = document.createElement("div");
         div.innerHTML = `
-            <button class="btn rounded active:bg-[#FF1F3D] active:text-white" onclick="handleCategoryButton('${category.category_id}')">${category.category}</button>
+            <button class="btn rounded bg-gray-300  active:bg-[#FF1F3D] active:text-white" onclick="handleCategoryButton('${category.category_id}')">${category.category}</button>
         `;
         categoriesContainer.appendChild(div);
     });
@@ -57,7 +57,7 @@ const handleDisplayCards = (itemsCards) => {
         <div class="card card-compact  bg-base-100 ">
             <figure><img src="./images/Icon.png" alt="Error" /></figure>
             <div class="card-body">
-                <h2 class="card-title text-center">Oops!! Sorry, There is no 
+                <h2 class="card-title text-center font-bold text-4xl">Oops!! Sorry, There is no 
                 <br>
                 content here</h2>
             </div>
@@ -87,7 +87,7 @@ const handleDisplayCards = (itemsCards) => {
                     <div class="card-body">
                         <div class="flex gap-3 items-center">
                             <img src="${authors[0].profile_picture}" alt="profile picture" class="w-10 h-10 rounded-full">
-                            <h3>${title}</h3>
+                            <h3 class= "font-bold">${title}</h3>
                         </div>
                         <div class="flex justify-between items-center">
                             <h3>${categoryType?.authors[0].profile_name}</h3>
