@@ -41,12 +41,21 @@ const handleCategoryButton = async (categoryId) => {
 
     const cardContainer = document.getElementById('card-container')
       cardContainer.innerHTML='';
+      if (data.data.length === 0) {
+        const div = document.createElement('div');
+        div.className = 'flex justify-center items-center h-32';
+        div.innerHTML = `
+        
+        <p class="text-center text-gray-500">Oops, no data available.</p>`;
+        cardContainer.appendChild(div);
+    } else {
     data.data?.forEach((categoryType) => {
-        console.log(categoryType)
+        // console.log(categoryType)
         const div = document.createElement('div')
         div.innerHTML = `
         <div class="card h-[400px] bg-base-100 shadow-xl mb-10">
                 <figure><img src="${categoryType?.thumbnail}" alt="thumblin" class="h-[200px] w-full" /></figure>
+                <p>${categoryType?.others?.posted_date}</p>
                 <div class="card-body">
                   <div class=" flex gap-3 items-center">
                     <img src="${categoryType?.authors[0].profile_picture}" alt="profile picture" class="w-10 h-10 rounded-full">
@@ -54,7 +63,8 @@ const handleCategoryButton = async (categoryId) => {
                   </div>
                   <div class="flex justify-between items-center">
                     <h3>${categoryType?.authors[0].profile_name}</h3>
-                    <p> ${categoryType?.authors[0]?.verified}</p>
+                    <p> ${categoryType?.authors[0].verified === false ? 'Verified' : 
+                    '<img src="./images/verified.svg" alt="verified" class = "pl-2">'}</p>
                   </div>
                   <h2>${categoryType?.others?.views}</h2>
                 </div>
@@ -64,6 +74,7 @@ const handleCategoryButton = async (categoryId) => {
         cardContainer.appendChild(div)
     })
 
+}
 }
 
 
