@@ -53,11 +53,13 @@ const handleDisplayCards = (itemsCards) => {
     if (itemsCards.length === 0) {
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="flex justify-center items-center flex-col">
+        <div class="flex justify-center items-center flex-col mt-8">
         <div class="card card-compact  bg-base-100 ">
             <figure><img src="./images/Icon.png" alt="Error" /></figure>
             <div class="card-body">
-                <h2 class="card-title">asdfghjkl</h2>
+                <h2 class="card-title text-center">Oops!! Sorry, There is no 
+                <br>
+                content here</h2>
             </div>
         </div>
     </div>
